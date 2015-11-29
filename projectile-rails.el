@@ -613,7 +613,7 @@ The bound variable is \"filename\"."
 
 (defun projectile-rails-root-relative-to-project-root ()
   "Return the location of the rails root relative to `projectile-project-root'."
-  (let ((rails-root (projectile-rails-root))
+  (let ((rails-root (file-truename (projectile-rails-root)))
         (project-root (projectile-project-root)))
     (if (string-equal rails-root project-root)
         ""
